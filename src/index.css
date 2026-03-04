@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Brand tokens ── */
+:root {
+  --charcoal: #1c1c1a;
+  --cream: #f4ede0;
+  --cream-dark: #e8dece;
+  --green: #2a5240;
+  --green-light: #3d7a5e;
+  --gold: #b8943a;
+  --gold-light: #d4aa55;
+  --canvas: #faf8f4;
+  --muted: #6b6560;
+  --border: rgba(28, 28, 26, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--charcoal);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--cream-dark); }
+::-webkit-scrollbar-thumb { background: var(--green); border-radius: 2px; }
+
+/* ── Reusable component classes ── */
+@layer components {
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-green text-cream
+           px-9 py-3.5 text-xs font-medium tracking-widest uppercase
+           rounded-sm border-none cursor-pointer transition-all duration-200;
+  }
+  .btn-primary:hover { @apply bg-green-light -translate-y-px; }
+  .btn-primary:disabled { @apply opacity-60 cursor-not-allowed translate-y-0; }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center bg-transparent text-charcoal
+           px-9 py-3.5 text-xs font-medium tracking-widest uppercase
+           rounded-sm border border-charcoal cursor-pointer transition-all duration-200;
+  }
+  .btn-outline:hover { @apply bg-charcoal text-cream; }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center bg-gold text-white
+           px-12 py-4 text-xs font-medium tracking-widest uppercase
+           rounded-sm border-none cursor-pointer transition-all duration-200;
+  }
+  .btn-gold:hover { background-color: var(--gold-light); @apply -translate-y-px; }
+
+  /* Section tags */
+  .section-tag {
+    @apply flex items-center gap-2.5 text-gold text-xs tracking-[0.22em] uppercase mb-5;
+  }
+  .section-tag::before {
+    content: '';
+    @apply block w-8 h-px bg-gold flex-shrink-0;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 3.5vw, 3.8rem);
+    @apply font-light leading-tight text-charcoal;
+    letter-spacing: -0.01em;
+  }
+  .section-title em { @apply not-italic text-green; font-style: italic !important; }
+
+  /* Form fields */
+  .field-label {
+    @apply block text-xs tracking-[0.12em] uppercase text-muted mb-2 mt-5;
+  }
+  .field-input {
+    @apply w-full px-4 py-3.5 border border-[rgba(28,28,26,0.1)] rounded-sm
+           font-sans text-[0.95rem] text-charcoal bg-canvas outline-none transition-colors duration-200;
+  }
+  .field-input:focus { border-color: var(--green); }
+
+  /* Work card */
+  .work-card {
+    @apply bg-canvas rounded overflow-hidden cursor-pointer transition-all duration-300;
+  }
+  .work-card:hover { @apply -translate-y-1.5 shadow-[0_20px_60px_rgba(0,0,0,0.10)]; }
+
+  /* Admin project row */
+  .admin-row {
+    @apply bg-canvas rounded px-5 py-4 flex justify-between items-center
+           gap-3 transition-shadow duration-200;
+  }
+  .admin-row:hover { @apply shadow-md; }
+
+  /* Skeleton loader */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--cream-dark) 25%,
+      var(--cream) 50%,
+      var(--cream-dark) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+    @apply rounded;
+  }
+
+  /* Spinner */
+  .spinner {
+    @apply inline-block w-4 h-4 rounded-full border-2 border-white/30 border-t-white mr-2 align-middle;
+    animation: spin 0.7s linear infinite;
+  }
+  .spinner-dark {
+    @apply border-charcoal/20 border-t-charcoal;
+  }
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  to { background-position: -200% 0; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.25s; }
+.delay-300 { animation-delay: 0.4s; }
+.delay-400 { animation-delay: 0.55s; }
