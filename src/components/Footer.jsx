@@ -1,23 +1,11 @@
 import { useNavigate } from 'react-router-dom'
-import { Facebook, Instagram, Twitter, Linkedin } from 'lucide-react'
+import { Facebook } from 'lucide-react'
 
 const socials = [
   {
     icon: Facebook,
     link: 'https://www.facebook.com/share/17w9Smo5QC/'
   },
-  {
-    icon: Linkedin,
-    link: '#'
-  },
-  {
-    icon: Twitter,
-    link: '#'
-  },
-  {
-    icon: Instagram,
-    link: '#'
-  }
 ]
 
 export default function Footer() {
@@ -32,7 +20,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="font-serif text-[1.8rem] font-semibold text-cream mb-4">
-            Lumina<span className="text-gold">.</span>
+            ASD Humanitarian<span className="text-gold">.</span>
           </div>
 
           <p className="text-[0.88rem] text-cream/45 leading-[1.8] max-w-[260px]">
@@ -109,7 +97,7 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row gap-6 md:gap-0 justify-between items-center pt-8">
         
         <p className="text-[0.78rem] text-cream/30 text-center md:text-left">
-          © 2025 Lumina Foundation. All rights reserved. Registered 501(c)(3).
+          © 2025 ASD Humanitarian Foundation. All rights reserved. Registered 501(c)(3).
         </p>
 
         <div className="flex gap-4">

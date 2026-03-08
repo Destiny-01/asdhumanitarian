@@ -35,7 +35,7 @@ export default function Navbar() {
           className="font-serif text-xl md:text-2xl font-semibold text-charcoal cursor-pointer tracking-wide"
           onClick={() => navigate('/')}
         >
-          Lumina<span className="text-green">.</span>
+          ASD Humanitarian<span className="text-green">.</span>
         </span>
 
         <div className="hidden md:flex items-center gap-8 lg:gap-9">
@@ -64,7 +64,7 @@ export default function Navbar() {
       </nav>
 
       <div
-        className={`fixed top-[70px] left-0 right-0 bg-canvas border-b
+        className={`fixed top-[50px] left-0 right-0 z-50 bg-canvas border-b
         border-[rgba(28,28,26,0.1)] md:hidden
         transition-all duration-300
         ${menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
