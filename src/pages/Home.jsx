@@ -77,7 +77,7 @@ export default function Home() {
         <div className="bg-cream px-6 md:px-10 lg:px-20 py-16 flex flex-col justify-center">
           
           <div className="section-tag">
-            Since 2014 · Restoring Hope. Empowering Futures.
+            Since 2020 · Restoring Hope. Empowering Futures.
           </div>
 
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mt-6 text-charcoal">
@@ -89,7 +89,7 @@ export default function Home() {
           </h1>
 
           <p className="mt-6 text-muted max-w-md leading-relaxed">
-            Lumina Foundation channels resources, ideas, and people toward the
+            ASD Humanitarian channels resources, ideas, and people toward the
             communities that need them most.
           </p>
 
@@ -143,9 +143,8 @@ export default function Home() {
           </h2>
 
           <p className="mt-6 text-muted max-w-lg leading-relaxed">
-            To empower orphans, vulnerable children, widows, and underserved families
-            through structured humanitarian support, quality education,
-            and skill development.
+            To restore dignity, hope, and opportunity to orphans, vulnerable children, widows, and underserved families through humanitarian intervention, education support, skill acquisition, and sustainable community development.
+ We exist to transform lives, not through temporary relief, but through structured empowerment that creates long-term stability and generational progress.
           </p>
 
           <button
