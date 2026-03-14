@@ -185,14 +185,9 @@ const stats = [
 		desc: "Building trust and programs that last since 2020.",
 	},
 	{
-		value: "6",
-		label: "Countries Active",
-		desc: "Kenya, Nigeria, Guatemala, Bangladesh, Cambodia, Ethiopia.",
-	},
-	{
-		value: "200+",
-		label: "Local Partners",
-		desc: "On-the-ground organizations who know their communities best.",
+		value: "100",
+		label: "Kids Supported",
+		desc: "Children empowered through education, mentorship, and humanitarian support.",
 	},
 ];
 
