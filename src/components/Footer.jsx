@@ -65,30 +65,6 @@ export default function Footer() {
 						<li>+234 706 678 6255</li>
 					</ul>
 				</div>
-
-				{/* Legal */}
-				<div>
-					<div className='text-[0.7rem] tracking-[0.18em] uppercase text-cream/35 mb-5'>
-						Legal
-					</div>
-
-					<ul className='flex flex-col gap-2.5 text-[0.88rem] text-cream/55'>
-						<li className='cursor-pointer hover:text-cream transition-colors duration-200'>
-							Privacy Policy
-						</li>
-
-						<li className='cursor-pointer hover:text-cream transition-colors duration-200'>
-							Tax Exemption Info
-						</li>
-
-						<li
-							onClick={() => navigate("/admin")}
-							className='cursor-pointer hover:text-cream transition-colors duration-200'
-						>
-							Admin
-						</li>
-					</ul>
-				</div>
 			</div>
 
 			{/* Bottom Row */}
