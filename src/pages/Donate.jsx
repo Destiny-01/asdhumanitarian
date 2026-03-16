@@ -285,9 +285,9 @@ export default function Donate() {
           </h1>
 
           <p className="text-[1rem] text-cream/60 leading-[1.8] mb-9 max-w-[520px]">
-            Your donation reaches communities directly. We keep our overhead
-            below 9% — because your money should work in the field, not in an
-            office.
+            Every contribution goes directly toward orphans, widows, and
+            vulnerable families across our communities. No cause is too small —
+            your generosity is what keeps this mission alive.
           </p>
 
           <ul>
