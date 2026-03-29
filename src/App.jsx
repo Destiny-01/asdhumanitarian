@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import Work from './pages/Work'
+import WorkDetail from './pages/WorkDetail'
 import Donate from './pages/Donate'
 import Admin from './pages/admin/Admin'
 import Notification from './components/Notification'
@@ -30,7 +31,8 @@ export default function App() {
         <Routes>
           <Route path="/"       element={<Home />} />
           <Route path="/about"  element={<About />} />
-          <Route path="/work"   element={<Work />} />
+          <Route path="/work"          element={<Work />} />
+          <Route path="/work/:slug"    element={<WorkDetail />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/admin"  element={<Admin />} />
         </Routes>

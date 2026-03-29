@@ -1,28 +1,19 @@
-import { useEffect, useState } from 'react'
-import { getProjects } from '../lib/supabase'
+import { useState, useMemo } from 'react'
+import { useEffect } from 'react'
+import works from '../data/works.json'
 import WorkCard from '../components/WorkCard'
 import Footer from '../components/Footer'
 
-const FILTERS = ['All', 'Education', 'Health', 'Livelihoods', 'Infrastructure']
+const FILTERS = ['All', 'Education', 'Empowerment', 'Infrastructure']
 
 export default function Work() {
-
-  const [projects, setProjects] = useState([])
-  const [loading, setLoading] = useState(true)
   const [active, setActive] = useState('All')
 
   useEffect(() => { window.scrollTo(0, 0) }, [])
 
-  useEffect(() => {
-    setLoading(true)
-
-    const cat = active === 'All' ? null : active.toLowerCase()
-
-    getProjects(cat)
-      .then(setProjects)
-      .catch(() => setProjects([]))
-      .finally(() => setLoading(false))
-
+  const filtered = useMemo(() => {
+    if (active === 'All') return works
+    return works.filter(p => p.category.toLowerCase() === active.toLowerCase())
   }, [active])
 
   return (
@@ -48,7 +39,7 @@ export default function Work() {
             <button
               key={f}
               onClick={() => setActive(f)}
-              className={`px-5 py-2 text-[0.74rem] tracking-[0.12em] uppercase border rounded-sm
+              className={`px-5 py-2 text-[0.74rem] tracking-[0.12em] uppercase border rounded-sm transition-all duration-200
               ${
                 active === f
                   ? 'bg-charcoal text-cream border-charcoal'
@@ -65,26 +56,11 @@ export default function Work() {
       {/* GRID */}
       <div className="px-6 md:px-10 lg:px-[60px] py-20 min-h-[400px]">
 
-        {loading ? (
+        {filtered.length ? (
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...Array(6)].map((_, i) => (
-              <div key={i} className="rounded overflow-hidden">
-                <div className="skeleton h-[220px]" />
-                <div className="bg-canvas p-7 space-y-3">
-                  <div className="skeleton h-3 w-16" />
-                  <div className="skeleton h-5" />
-                  <div className="skeleton h-3 w-4/5" />
-                </div>
-              </div>
-            ))}
-          </div>
-
-        ) : projects.length ? (
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((p) => (
-              <WorkCard key={p.id} project={p} />
+            {filtered.map((p) => (
+              <WorkCard key={p.slug} project={p} />
             ))}
           </div>
 

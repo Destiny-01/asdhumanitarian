@@ -180,7 +180,7 @@ const leadershipTeam = [
 
 const stats = [
   {
-    value: "5",
+    value: "6",
     label: "Years of Operation",
     desc: "Building trust and programs that last since 2020.",
   },

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getProjects } from "../lib/supabase";
+import works from "../data/works.json";
 import WorkCard from "../components/WorkCard";
 import Footer from "../components/Footer";
 import { ChevronDown } from "lucide-react";
@@ -115,8 +115,6 @@ function PartnerPopup({ onClose }) {
 
 export default function Home() {
   const navigate = useNavigate();
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [openIndex, setOpenIndex] = useState(null);
   const [showPartnerPopup, setShowPartnerPopup] = useState(false);
 
@@ -124,15 +122,9 @@ export default function Home() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
+  useEffect(() => { window.scrollTo(0, 0); }, []);
 
-    getProjects()
-      .then((data) => setProjects(data))
-      .finally(() => setLoading(false));
-  }, []);
-
-  const recent = projects.slice(0, 3);
+  const recent = works.slice(0, 3);
 
   return (
     <div>
@@ -286,19 +278,11 @@ Our commitment is long-term transformation. one child, one family, one community
           </button>
         </div>
 
-        {loading ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...Array(3)].map((_, i) => (
-              <div key={i} className="skeleton h-[260px]" />
-            ))}
-          </div>
-        ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {recent.map((p) => (
-              <WorkCard key={p.id} project={p} />
-            ))}
-          </div>
-        )}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {recent.map((p) => (
+            <WorkCard key={p.slug} project={p} />
+          ))}
+        </div>
       </section>
 
       {/* CTA */}
