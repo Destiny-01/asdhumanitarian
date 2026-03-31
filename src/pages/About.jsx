@@ -75,7 +75,11 @@ const adminTeam = [
     post: "Asst. Social Media Director",
     image: "/exec(2).jpeg",
   },
-  { name: "Medina Lisa Yahaya", post: "Administrator", image: "/exec(4).jpeg" },
+  {
+    name: "Medinat Lisa Yahaya",
+    post: "Administrator",
+    image: "/exec(4).jpeg",
+  },
   { name: "Luminous Lucia", post: "Administrator", image: "/exec(9).jpeg" },
   {
     name: "Christiana Isomine Omomia",
@@ -135,11 +139,11 @@ const leadershipTeam = [
       "Recheal Aigbodion is a dedicated humanitarian based in Abuja, Nigeria, and a proud founding member of ASD Foundation. Since 2020, she has served with unwavering commitment, playing a vital role in the growth and stability of the organization. As one of the strong pillars of ASD, Recheal is deeply passionate about uplifting the less privileged and consistently champions initiatives that bring hope, support, and meaningful impact to vulnerable members of society. Her diligence and compassion continue to shape the foundation's mission and legacy.",
   },
   {
-    name: "Medina Lisa Yahaya",
+    name: "Medinat Lisa Yahaya",
     post: "Financial Secretary",
     image: "/admin(5).jpeg",
     description:
-      "Lisa she has served the organization tirelessly, demonstrating integrity, accountability, and an unwavering commitment to its mission. From 2021 to 2023, she also served as the ASD Abuja Branch Coordinator, where she provided strategic coordination and strengthened the foundation's outreach within the region. Medina is deeply compassionate and intentional about creating opportunities for vulnerable families to smile again. Her dedication, financial stewardship, and heart for service continue to reinforce the strength and credibility of ASD Foundation.",
+      "Lisa she has served the organization tirelessly, demonstrating integrity, accountability, and an unwavering commitment to its mission. From 2021 to 2023, she also served as the ASD Abuja Branch Coordinator, where she provided strategic coordination and strengthened the foundation's outreach within the region. Medinat is deeply compassionate and intentional about creating opportunities for vulnerable families to smile again. Her dedication, financial stewardship, and heart for service continue to reinforce the strength and credibility of ASD Foundation.",
   },
   {
     name: "Queen Sabrina Igbokah",
@@ -185,7 +189,7 @@ const stats = [
     desc: "Building trust and programs that last since 2020.",
   },
   {
-    value: "100+",
+    value: "1000+",
     label: "Kids Supported",
     desc: "Children empowered through education, mentorship, and humanitarian support.",
   },
