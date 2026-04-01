@@ -173,7 +173,7 @@ export default function Home() {
             </div>
 
             <div className="font-serif text-5xl lg:text-6xl font-light">
-              100<span className="text-gold">+</span>
+              1000<span className="text-gold">+</span>
             </div>
 
             <div className="text-sm mt-2 text-cream/70">
